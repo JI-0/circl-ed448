@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/JI-0/circl/sign/dilithium/internal/common"
-	"github.com/JI-0/circl/sign/dilithium/mode5aes"
+	"github.com/JI-0/circl-ed448/sign/dilithium/internal/common"
+	"github.com/JI-0/circl-ed448/sign/dilithium/mode5aes"
 )
 
 // implMode5AES implements the mode.Mode interface for Dilithium5-AES.

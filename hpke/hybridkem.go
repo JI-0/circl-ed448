@@ -10,7 +10,7 @@ package hpke
 import (
 	"crypto/rand"
 
-	"github.com/JI-0/circl/kem"
+	"github.com/JI-0/circl-ed448/kem"
 )
 
 type hybridKEM struct {

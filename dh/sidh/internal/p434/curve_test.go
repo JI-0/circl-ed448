@@ -6,7 +6,7 @@ package p434
 import (
 	"bytes"
 	crand "crypto/rand"
-	. "github.com/JI-0/circl/dh/sidh/internal/common"
+	. "github.com/JI-0/circl-ed448/dh/sidh/internal/common"
 	"io"
 	"math"
 	"math/rand"

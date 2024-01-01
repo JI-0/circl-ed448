@@ -3,7 +3,7 @@ package ed25519_test
 import (
 	"testing"
 
-	"github.com/JI-0/circl/sign/ed25519"
+	"github.com/JI-0/circl-ed448/sign/ed25519"
 )
 
 type zeroReader struct{}

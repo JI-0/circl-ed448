@@ -9,7 +9,7 @@ import (
 	"crypto/rand"
 	"testing"
 
-	"github.com/JI-0/circl/group"
+	"github.com/JI-0/circl-ed448/group"
 )
 
 const testSimOTCount = 100

@@ -1,7 +1,7 @@
 package common
 
 import (
-	"github.com/JI-0/circl/pke/kyber/internal/common/params"
+	"github.com/JI-0/circl-ed448/pke/kyber/internal/common/params"
 )
 
 const (

@@ -3,7 +3,7 @@ package x448
 import (
 	"crypto/subtle"
 
-	fp "github.com/JI-0/circl/math/fp448"
+	fp "github.com/JI-0/circl-ed448/math/fp448"
 )
 
 // Size is the length in bytes of a X448 key.

@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/JI-0/circl/ecc/p384"
-	"github.com/JI-0/circl/internal/test"
+	"github.com/JI-0/circl-ed448/ecc/p384"
+	"github.com/JI-0/circl-ed448/internal/test"
 )
 
 func TestIsOnCurveTrue(t *testing.T) {
@@ -241,7 +241,7 @@ func BenchmarkScalarMult(b *testing.B) {
 }
 
 func Example_p384() {
-	// import "github.com/JI-0/circl/ecc/p384"
+	// import "github.com/JI-0/circl-ed448/ecc/p384"
 	// import "crypto/elliptic"
 	circl := p384.P384()
 	stdlib := elliptic.P384()

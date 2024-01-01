@@ -1,7 +1,7 @@
 package x448
 
 import (
-	fp "github.com/JI-0/circl/math/fp448"
+	fp "github.com/JI-0/circl-ed448/math/fp448"
 )
 
 // ladderJoye calculates a fixed-point multiplication with the generator point.

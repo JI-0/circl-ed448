@@ -1,6 +1,6 @@
 package dsl
 
-import "github.com/JI-0/circl/abe/cpabe/tkn20/internal/tkn"
+import "github.com/JI-0/circl-ed448/abe/cpabe/tkn20/internal/tkn"
 
 var AttrHashKey = []byte("attribute value hashing")
 

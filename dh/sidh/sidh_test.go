@@ -8,8 +8,8 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/JI-0/circl/dh/sidh/internal/common"
-	. "github.com/JI-0/circl/internal/test"
+	"github.com/JI-0/circl-ed448/dh/sidh/internal/common"
+	. "github.com/JI-0/circl-ed448/internal/test"
 )
 
 /* -------------------------------------------------------------------------
@@ -580,7 +580,7 @@ func BenchmarkSharedSecretBobP434(b *testing.B) {
 // Examples
 
 func ExamplePrivateKey() {
-	// import "github.com/JI-0/circl/dh/sidh"
+	// import "github.com/JI-0/circl-ed448/dh/sidh"
 
 	// Alice's key pair
 	prvA := NewPrivateKey(Fp503, KeyVariantSidhA)

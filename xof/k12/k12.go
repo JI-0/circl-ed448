@@ -9,8 +9,8 @@ package k12
 import (
 	"encoding/binary"
 
-	"github.com/JI-0/circl/internal/sha3"
-	"github.com/JI-0/circl/simd/keccakf1600"
+	"github.com/JI-0/circl-ed448/internal/sha3"
+	"github.com/JI-0/circl-ed448/simd/keccakf1600"
 )
 
 const chunkSize = 8192 // aka B

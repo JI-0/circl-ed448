@@ -7,10 +7,10 @@ import (
 	"errors"
 	"io"
 
-	"github.com/JI-0/circl/internal/sha3"
-	"github.com/JI-0/circl/sign"
-	"github.com/JI-0/circl/sign/dilithium/mode2"
-	"github.com/JI-0/circl/sign/ed25519"
+	"github.com/JI-0/circl-ed448/internal/sha3"
+	"github.com/JI-0/circl-ed448/sign"
+	"github.com/JI-0/circl-ed448/sign/dilithium/mode2"
+	"github.com/JI-0/circl-ed448/sign/ed25519"
 )
 
 const (

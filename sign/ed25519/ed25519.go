@@ -46,7 +46,7 @@ import (
 	"io"
 	"strconv"
 
-	"github.com/JI-0/circl/sign"
+	"github.com/JI-0/circl-ed448/sign"
 )
 
 const (

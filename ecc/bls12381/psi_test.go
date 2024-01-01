@@ -3,7 +3,7 @@ package bls12381
 import (
 	"testing"
 
-	"github.com/JI-0/circl/ecc/bls12381/ff"
+	"github.com/JI-0/circl-ed448/ecc/bls12381/ff"
 )
 
 func checkE(t *testing.T, x *ff.Fp12, y *ff.Fp12) {

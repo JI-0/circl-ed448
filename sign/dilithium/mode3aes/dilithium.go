@@ -11,8 +11,8 @@ import (
 	"errors"
 	"io"
 
-	"github.com/JI-0/circl/sign/dilithium/internal/common"
-	"github.com/JI-0/circl/sign/dilithium/mode3aes/internal"
+	"github.com/JI-0/circl-ed448/sign/dilithium/internal/common"
+	"github.com/JI-0/circl-ed448/sign/dilithium/mode3aes/internal"
 )
 
 const (

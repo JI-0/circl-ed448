@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"io"
 
-	pairing "github.com/JI-0/circl/ecc/bls12381"
+	pairing "github.com/JI-0/circl-ed448/ecc/bls12381"
 )
 
 type PublicParams struct {

@@ -6,7 +6,7 @@ package {{.PACKAGE}}
 import (
 	"math"
 	"errors"
-	. "github.com/JI-0/circl/dh/sidh/internal/common"
+	. "github.com/JI-0/circl-ed448/dh/sidh/internal/common"
 )
 
 // Stores isogeny 3 curve constants

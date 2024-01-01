@@ -3,7 +3,7 @@ package internal
 import (
 	"testing"
 
-	"github.com/JI-0/circl/sign/dilithium/internal/common"
+	"github.com/JI-0/circl-ed448/sign/dilithium/internal/common"
 )
 
 func TestPolyPackLeqEta(t *testing.T) {

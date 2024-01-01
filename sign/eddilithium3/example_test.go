@@ -3,7 +3,7 @@ package eddilithium3_test
 import (
 	"fmt"
 
-	"github.com/JI-0/circl/sign/eddilithium3"
+	"github.com/JI-0/circl-ed448/sign/eddilithium3"
 )
 
 func Example() {

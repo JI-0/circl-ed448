@@ -1,6 +1,6 @@
 package bls12381
 
-import "github.com/JI-0/circl/ecc/bls12381/ff"
+import "github.com/JI-0/circl-ed448/ecc/bls12381/ff"
 
 // GtSize is the length in bytes of an element in Gt.
 const GtSize = ff.URootSize

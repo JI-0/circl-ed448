@@ -11,7 +11,7 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/JI-0/circl/internal/conv"
+	"github.com/JI-0/circl-ed448/internal/conv"
 )
 
 // EltG is a group element.

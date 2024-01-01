@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/JI-0/circl/sign/dilithium/internal/common"
-	"github.com/JI-0/circl/sign/dilithium/mode2aes"
+	"github.com/JI-0/circl-ed448/sign/dilithium/internal/common"
+	"github.com/JI-0/circl-ed448/sign/dilithium/mode2aes"
 )
 
 // implMode2AES implements the mode.Mode interface for Dilithium2-AES.

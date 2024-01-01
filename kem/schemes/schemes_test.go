@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/JI-0/circl/kem/schemes"
+	"github.com/JI-0/circl-ed448/kem/schemes"
 )
 
 func TestCaseSensitivity(t *testing.T) {
@@ -140,7 +140,7 @@ func TestApi(t *testing.T) {
 }
 
 func Example_schemes() {
-	// import "github.com/JI-0/circl/kem/schemes"
+	// import "github.com/JI-0/circl-ed448/kem/schemes"
 
 	for _, sch := range schemes.All() {
 		fmt.Println(sch.Name())

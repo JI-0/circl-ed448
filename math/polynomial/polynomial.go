@@ -2,7 +2,7 @@
 // of a group.
 package polynomial
 
-import "github.com/JI-0/circl/group"
+import "github.com/JI-0/circl-ed448/group"
 
 // Polynomial stores a polynomial over the set of scalars of a group.
 type Polynomial struct {

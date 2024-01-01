@@ -6,7 +6,7 @@ package p751
 import (
 	"testing"
 
-	"github.com/JI-0/circl/dh/sidh/internal/common"
+	"github.com/JI-0/circl-ed448/dh/sidh/internal/common"
 )
 
 // Package-level storage for this field element is intended to deter

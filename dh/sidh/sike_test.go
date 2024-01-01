@@ -11,8 +11,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/JI-0/circl/dh/sidh/internal/common"
-	. "github.com/JI-0/circl/internal/test"
+	"github.com/JI-0/circl-ed448/dh/sidh/internal/common"
+	. "github.com/JI-0/circl-ed448/internal/test"
 )
 
 type sikeVec struct {

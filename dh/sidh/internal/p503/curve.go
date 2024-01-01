@@ -5,7 +5,7 @@ package p503
 
 import (
 	"errors"
-	. "github.com/JI-0/circl/dh/sidh/internal/common"
+	. "github.com/JI-0/circl-ed448/dh/sidh/internal/common"
 	"math"
 )
 

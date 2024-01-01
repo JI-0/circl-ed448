@@ -19,7 +19,7 @@ import (
 	"errors"
 	"io"
 
-	"github.com/JI-0/circl/kem"
+	"github.com/JI-0/circl-ed448/kem"
 )
 
 const versionLabel = "HPKE-v1"

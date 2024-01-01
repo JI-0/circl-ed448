@@ -3,7 +3,7 @@ package bls12381
 import (
 	"fmt"
 
-	"github.com/JI-0/circl/ecc/bls12381/ff"
+	"github.com/JI-0/circl-ed448/ecc/bls12381/ff"
 )
 
 type isogG1Point struct{ x, y, z ff.Fp }

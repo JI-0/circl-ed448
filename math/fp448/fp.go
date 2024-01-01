@@ -4,7 +4,7 @@ package fp448
 import (
 	"errors"
 
-	"github.com/JI-0/circl/internal/conv"
+	"github.com/JI-0/circl-ed448/internal/conv"
 )
 
 // Size in bytes of an element.

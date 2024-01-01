@@ -3,7 +3,7 @@ package ff
 import (
 	"testing"
 
-	"github.com/JI-0/circl/internal/test"
+	"github.com/JI-0/circl-ed448/internal/test"
 )
 
 func randomFp6(t testing.TB) *Fp6 { return &Fp6{*randomFp2(t), *randomFp2(t), *randomFp2(t)} }

@@ -8,8 +8,8 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/JI-0/circl/group"
-	"github.com/JI-0/circl/internal/test"
+	"github.com/JI-0/circl-ed448/group"
+	"github.com/JI-0/circl-ed448/internal/test"
 )
 
 func TestHashToElement(t *testing.T) {

@@ -1,6 +1,6 @@
 package x25519
 
-import "github.com/JI-0/circl/math/fp25519"
+import "github.com/JI-0/circl-ed448/math/fp25519"
 
 // tableGenerator contains the set of points:
 //

@@ -5,7 +5,7 @@ import (
 	"flag"
 	"testing"
 
-	"github.com/JI-0/circl/internal/test"
+	"github.com/JI-0/circl-ed448/internal/test"
 )
 
 func randomPoint(P *pointR1) {

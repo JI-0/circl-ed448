@@ -11,11 +11,11 @@ import (
 	"hash"
 	"io"
 
-	"github.com/JI-0/circl/dh/x25519"
-	"github.com/JI-0/circl/dh/x448"
-	"github.com/JI-0/circl/ecc/p384"
-	"github.com/JI-0/circl/kem"
-	"github.com/JI-0/circl/kem/kyber/kyber768"
+	"github.com/JI-0/circl-ed448/dh/x25519"
+	"github.com/JI-0/circl-ed448/dh/x448"
+	"github.com/JI-0/circl-ed448/ecc/p384"
+	"github.com/JI-0/circl-ed448/kem"
+	"github.com/JI-0/circl-ed448/kem/kyber/kyber768"
 	"golang.org/x/crypto/chacha20poly1305"
 	"golang.org/x/crypto/hkdf"
 )

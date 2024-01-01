@@ -3,7 +3,7 @@ package ff
 import (
 	"io"
 
-	"github.com/JI-0/circl/internal/conv"
+	"github.com/JI-0/circl-ed448/internal/conv"
 )
 
 // FpSize is the length in bytes of an Fp element.

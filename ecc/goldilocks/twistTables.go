@@ -1,6 +1,6 @@
 package goldilocks
 
-import fp "github.com/JI-0/circl/math/fp448"
+import fp "github.com/JI-0/circl-ed448/math/fp448"
 
 var tabFixMult = [fxV][fx2w1]preTwistPointAffine{
 	{

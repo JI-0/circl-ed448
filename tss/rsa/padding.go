@@ -5,8 +5,8 @@ import (
 	"crypto/rsa"
 	"io"
 
-	"github.com/JI-0/circl/tss/rsa/internal"
-	pss2 "github.com/JI-0/circl/tss/rsa/internal/pss"
+	"github.com/JI-0/circl-ed448/tss/rsa/internal"
+	pss2 "github.com/JI-0/circl-ed448/tss/rsa/internal/pss"
 )
 
 type Padder interface {

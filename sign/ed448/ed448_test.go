@@ -8,8 +8,8 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/JI-0/circl/internal/test"
-	"github.com/JI-0/circl/sign/ed448"
+	"github.com/JI-0/circl-ed448/internal/test"
+	"github.com/JI-0/circl-ed448/sign/ed448"
 )
 
 type zeroReader struct{}
@@ -300,7 +300,7 @@ func BenchmarkEd448Ph(b *testing.B) {
 }
 
 func Example_ed448() {
-	// import "github.com/JI-0/circl/sign/ed448"
+	// import "github.com/JI-0/circl-ed448/sign/ed448"
 	// import "crypto/rand"
 
 	// Generating Alice's key pair
@@ -321,7 +321,7 @@ func Example_ed448() {
 }
 
 func ExampleSignPh() {
-	// import "github.com/JI-0/circl/sign/ed448"
+	// import "github.com/JI-0/circl-ed448/sign/ed448"
 	// import "crypto/rand"
 
 	// Generating Alice's key pair

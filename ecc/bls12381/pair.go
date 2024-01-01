@@ -1,6 +1,6 @@
 package bls12381
 
-import "github.com/JI-0/circl/ecc/bls12381/ff"
+import "github.com/JI-0/circl-ed448/ecc/bls12381/ff"
 
 // Pair calculates the ate-pairing of P and Q.
 func Pair(P *G1, Q *G2) *Gt {

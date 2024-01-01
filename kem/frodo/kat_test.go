@@ -9,8 +9,8 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/JI-0/circl/internal/nist"
-	"github.com/JI-0/circl/kem/schemes"
+	"github.com/JI-0/circl-ed448/internal/nist"
+	"github.com/JI-0/circl-ed448/kem/schemes"
 )
 
 func TestPQCgenKATKem(t *testing.T) {

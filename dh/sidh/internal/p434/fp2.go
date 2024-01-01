@@ -4,7 +4,7 @@
 package p434
 
 import (
-	"github.com/JI-0/circl/dh/sidh/internal/common"
+	"github.com/JI-0/circl-ed448/dh/sidh/internal/common"
 )
 
 // Montgomery multiplication. Input values must be already

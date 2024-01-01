@@ -1,6 +1,6 @@
 package bls12381
 
-import "github.com/JI-0/circl/ecc/bls12381/ff"
+import "github.com/JI-0/circl-ed448/ecc/bls12381/ff"
 
 func doubleAndLine(P *G2, l *line) {
 	// Reference:

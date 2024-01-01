@@ -1,8 +1,8 @@
 package internal
 
 import (
-	"github.com/JI-0/circl/internal/sha3"
-	"github.com/JI-0/circl/pke/kyber/internal/common"
+	"github.com/JI-0/circl-ed448/internal/sha3"
+	"github.com/JI-0/circl-ed448/pke/kyber/internal/common"
 )
 
 // A Kyber.CPAPKE private key.

@@ -3,9 +3,9 @@ package internal
 import (
 	"encoding/binary"
 
-	"github.com/JI-0/circl/internal/sha3"
-	"github.com/JI-0/circl/sign/dilithium/internal/common"
-	"github.com/JI-0/circl/simd/keccakf1600"
+	"github.com/JI-0/circl-ed448/internal/sha3"
+	"github.com/JI-0/circl-ed448/sign/dilithium/internal/common"
+	"github.com/JI-0/circl-ed448/simd/keccakf1600"
 )
 
 // DeriveX4Available indicates whether the system supports the quick fourway

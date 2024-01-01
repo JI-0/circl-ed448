@@ -10,8 +10,8 @@ import (
 	"io"
 	"math/big"
 
-	"github.com/JI-0/circl/ecc/p384"
-	"github.com/JI-0/circl/expander"
+	"github.com/JI-0/circl-ed448/ecc/p384"
+	"github.com/JI-0/circl-ed448/expander"
 )
 
 var (

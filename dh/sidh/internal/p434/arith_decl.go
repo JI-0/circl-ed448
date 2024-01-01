@@ -7,7 +7,7 @@
 package p434
 
 import (
-	. "github.com/JI-0/circl/dh/sidh/internal/common"
+	. "github.com/JI-0/circl-ed448/dh/sidh/internal/common"
 )
 
 // If choice = 0, leave x unchanged. If choice = 1, sets x to y.

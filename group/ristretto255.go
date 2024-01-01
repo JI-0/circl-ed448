@@ -7,8 +7,8 @@ import (
 	"io"
 	"math/big"
 
-	"github.com/JI-0/circl/expander"
-	"github.com/JI-0/circl/internal/conv"
+	"github.com/JI-0/circl-ed448/expander"
+	"github.com/JI-0/circl-ed448/internal/conv"
 	r255 "github.com/bwesterb/go-ristretto"
 )
 

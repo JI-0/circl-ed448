@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"sort"
 
-	"github.com/JI-0/circl/sign/dilithium"
+	"github.com/JI-0/circl-ed448/sign/dilithium"
 )
 
 func Example() {

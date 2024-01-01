@@ -1,6 +1,6 @@
 package curve4q
 
-import "github.com/JI-0/circl/ecc/fourq"
+import "github.com/JI-0/circl-ed448/ecc/fourq"
 
 // Size is the size in bytes of keys.
 const Size = 32

@@ -9,7 +9,7 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/JI-0/circl/internal/test"
+	"github.com/JI-0/circl-ed448/internal/test"
 )
 
 func TestFpCmov(t *testing.T) {

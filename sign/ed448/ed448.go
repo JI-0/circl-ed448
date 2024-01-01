@@ -90,11 +90,8 @@ func (pub PublicKey) Equal(x crypto.PublicKey) bool {
 func CombinePubKeys(pub0, pub1 *PublicKey) PublicKey {
 	p0, _ := goldilocks.FromBytes(*pub0)
 	p1, _ := goldilocks.FromBytes(*pub1)
-	// fmt.Println(p0)
-	// fmt.Println(p1)
-	p0.Add(p1)
-	// fmt.Println(p0)
 
+	p0.Add(p1)
 	keyBytes, _ := p0.MarshalBinary()
 
 	return keyBytes

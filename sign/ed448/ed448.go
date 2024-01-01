@@ -130,17 +130,7 @@ func (priv PrivateKey) GetScalar() (*goldilocks.Scalar, []byte) {
 	s := &goldilocks.Scalar{}
 	deriveSecretScalar(s, h[:paramB])
 	prefix := h[paramB:]
-	// hn := h[:paramB]
-	// hn[0] &= 0xFC
-	// hn[paramB-1] = 0x00
-	// hn[paramB-2] |= 0x80
-	// s.FromBytes(hn[:paramB])
 
-	// _, _ = H.Write(privateKey[:SeedSize])
-	// _, _ = H.Read(h[:])
-	// s := &goldilocks.Scalar{}
-	// deriveSecretScalar(s, h[:paramB])
-	// prefix := h[paramB:]
 	return s, prefix
 }
 

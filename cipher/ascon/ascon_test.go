@@ -11,8 +11,8 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/cloudflare/circl/cipher/ascon"
-	"github.com/cloudflare/circl/internal/test"
+	"github.com/JI-0/circl/cipher/ascon"
+	"github.com/JI-0/circl/internal/test"
 )
 
 type vector struct {

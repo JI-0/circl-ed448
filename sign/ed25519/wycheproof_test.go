@@ -8,8 +8,8 @@ import (
 	"os"
 	"testing"
 
-	"github.com/cloudflare/circl/internal/test"
-	"github.com/cloudflare/circl/sign/ed25519"
+	"github.com/JI-0/circl/internal/test"
+	"github.com/JI-0/circl/sign/ed25519"
 )
 
 type group struct {

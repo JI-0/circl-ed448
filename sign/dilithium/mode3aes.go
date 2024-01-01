@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/cloudflare/circl/sign/dilithium/internal/common"
-	"github.com/cloudflare/circl/sign/dilithium/mode3aes"
+	"github.com/JI-0/circl/sign/dilithium/internal/common"
+	"github.com/JI-0/circl/sign/dilithium/mode3aes"
 )
 
 // implMode3AES implements the mode.Mode interface for Dilithium3-AES.

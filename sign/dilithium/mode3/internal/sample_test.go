@@ -4,7 +4,7 @@ import (
 	"encoding/binary"
 	"testing"
 
-	"github.com/cloudflare/circl/sign/dilithium/internal/common"
+	"github.com/JI-0/circl/sign/dilithium/internal/common"
 )
 
 func TestVectorDeriveUniform(t *testing.T) {

@@ -3,7 +3,7 @@
 package internal
 
 import (
-	"github.com/cloudflare/circl/pke/kyber/internal/common"
+	"github.com/JI-0/circl/pke/kyber/internal/common"
 )
 
 // A vector of K polynomials

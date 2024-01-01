@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/cloudflare/circl/internal/test"
+	"github.com/JI-0/circl/internal/test"
 )
 
 func TestAeadExporter(t *testing.T) {

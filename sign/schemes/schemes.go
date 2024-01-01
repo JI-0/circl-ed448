@@ -11,11 +11,11 @@ package schemes
 import (
 	"strings"
 
-	"github.com/cloudflare/circl/sign"
-	"github.com/cloudflare/circl/sign/ed25519"
-	"github.com/cloudflare/circl/sign/ed448"
-	"github.com/cloudflare/circl/sign/eddilithium2"
-	"github.com/cloudflare/circl/sign/eddilithium3"
+	"github.com/JI-0/circl/sign"
+	"github.com/JI-0/circl/sign/ed25519"
+	"github.com/JI-0/circl/sign/ed448"
+	"github.com/JI-0/circl/sign/eddilithium2"
+	"github.com/JI-0/circl/sign/eddilithium3"
 )
 
 var allSchemes = [...]sign.Scheme{

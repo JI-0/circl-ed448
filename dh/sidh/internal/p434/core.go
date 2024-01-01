@@ -5,7 +5,7 @@ package p434
 
 import (
 	crand "crypto/rand"
-	. "github.com/cloudflare/circl/dh/sidh/internal/common"
+	. "github.com/JI-0/circl/dh/sidh/internal/common"
 )
 
 // -----------------------------------------------------------------------------

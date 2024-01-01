@@ -6,8 +6,8 @@ import (
 	"io"
 	"testing"
 
-	"github.com/cloudflare/circl/internal/test"
-	"github.com/cloudflare/circl/xof"
+	"github.com/JI-0/circl/internal/test"
+	"github.com/JI-0/circl/xof"
 )
 
 type vector struct {

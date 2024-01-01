@@ -6,7 +6,7 @@ import (
 	"encoding/binary"
 	"testing"
 
-	"github.com/cloudflare/circl/sign/dilithium/internal/common"
+	"github.com/JI-0/circl/sign/dilithium/internal/common"
 )
 
 // Checks whether p is normalized.  Only used in tests.

@@ -15,9 +15,9 @@ import (
 	"crypto/subtle"
 	"io"
 
-	"github.com/cloudflare/circl/dh/sidh"
-	"github.com/cloudflare/circl/internal/sha3"
-	"github.com/cloudflare/circl/kem"
+	"github.com/JI-0/circl/dh/sidh"
+	"github.com/JI-0/circl/internal/sha3"
+	"github.com/JI-0/circl/kem"
 )
 
 // Deprecated: not cryptographically secure.

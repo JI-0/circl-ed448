@@ -3,7 +3,7 @@ package tkn
 import (
 	"fmt"
 
-	pairing "github.com/cloudflare/circl/ecc/bls12381"
+	pairing "github.com/JI-0/circl/ecc/bls12381"
 )
 
 type pairAccum struct {

@@ -4,8 +4,8 @@ import (
 	"bytes"
 	"testing"
 
-	"github.com/cloudflare/circl/internal/test"
-	"github.com/cloudflare/circl/sign/ed448"
+	"github.com/JI-0/circl/internal/test"
+	"github.com/JI-0/circl/sign/ed448"
 )
 
 type vector struct {

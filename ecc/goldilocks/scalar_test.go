@@ -6,9 +6,9 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/cloudflare/circl/ecc/goldilocks"
-	"github.com/cloudflare/circl/internal/conv"
-	"github.com/cloudflare/circl/internal/test"
+	"github.com/JI-0/circl/ecc/goldilocks"
+	"github.com/JI-0/circl/internal/conv"
+	"github.com/JI-0/circl/internal/test"
 )
 
 func TestReduceModOrder(t *testing.T) {

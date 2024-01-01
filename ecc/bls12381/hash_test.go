@@ -9,8 +9,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/cloudflare/circl/ecc/bls12381/ff"
-	"github.com/cloudflare/circl/internal/test"
+	"github.com/JI-0/circl/ecc/bls12381/ff"
+	"github.com/JI-0/circl/internal/test"
 )
 
 type vectorHash struct {

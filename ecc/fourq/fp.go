@@ -3,7 +3,7 @@ package fourq
 import (
 	"math/big"
 
-	"github.com/cloudflare/circl/internal/conv"
+	"github.com/JI-0/circl/internal/conv"
 )
 
 var modulusP = Fp{

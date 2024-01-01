@@ -87,6 +87,19 @@ func (pub PublicKey) Equal(x crypto.PublicKey) bool {
 	return ok && bytes.Equal(pub, xx)
 }
 
+func CombinePubKeys(pub0, pub1 *PublicKey) PublicKey {
+	p0, _ := goldilocks.FromBytes(*pub0)
+	p1, _ := goldilocks.FromBytes(*pub1)
+	// fmt.Println(p0)
+	// fmt.Println(p1)
+	p0.Add(p1)
+	// fmt.Println(p0)
+
+	keyBytes, _ := p0.MarshalBinary()
+
+	return keyBytes
+}
+
 // PrivateKey is the type of Ed448 private keys. It implements crypto.Signer.
 type PrivateKey []byte
 
@@ -110,6 +123,28 @@ func (priv PrivateKey) Seed() []byte {
 	seed := make([]byte, SeedSize)
 	copy(seed, priv[:SeedSize])
 	return seed
+}
+
+func (priv PrivateKey) GetScalar() (*goldilocks.Scalar, []byte) {
+	var h [hashSize]byte
+	H := sha3.NewShake256()
+	_, _ = H.Write(priv[:SeedSize])
+	_, _ = H.Read(h[:])
+	s := &goldilocks.Scalar{}
+	deriveSecretScalar(s, h[:paramB])
+	prefix := h[paramB:]
+	// hn := h[:paramB]
+	// hn[0] &= 0xFC
+	// hn[paramB-1] = 0x00
+	// hn[paramB-2] |= 0x80
+	// s.FromBytes(hn[:paramB])
+
+	// _, _ = H.Write(privateKey[:SeedSize])
+	// _, _ = H.Read(h[:])
+	// s := &goldilocks.Scalar{}
+	// deriveSecretScalar(s, h[:paramB])
+	// prefix := h[paramB:]
+	return s, prefix
 }
 
 func (priv PrivateKey) Scheme() sign.Scheme { return sch }
@@ -270,6 +305,90 @@ func signAll(signature []byte, privateKey PrivateKey, message, ctx []byte, preHa
 	copy(signature[paramB:], S[:])
 }
 
+func signAllDualkey(signature []byte, privateKey0, privateKey1 PrivateKey, message, ctx []byte, preHash bool) {
+	if len(ctx) > ContextMaxSize {
+		panic(fmt.Errorf("ed448: bad context length: " + strconv.Itoa(len(ctx))))
+	}
+
+	H := sha3.NewShake256()
+	var PHM []byte
+
+	if preHash {
+		var h [64]byte
+		_, _ = H.Write(message)
+		_, _ = H.Read(h[:])
+		PHM = h[:]
+		H.Reset()
+	} else {
+		PHM = message
+	}
+
+	// 1.  Hash the 57-byte private key using SHAKE256(x, 114).
+	var h0 [hashSize]byte
+	_, _ = H.Write(privateKey0[:SeedSize])
+	_, _ = H.Read(h0[:])
+	s0 := &goldilocks.Scalar{}
+	deriveSecretScalar(s0, h0[:paramB])
+	prefix0 := h0[paramB:]
+
+	H.Reset()
+
+	var h1 [hashSize]byte
+	_, _ = H.Write(privateKey1[:SeedSize])
+	_, _ = H.Read(h1[:])
+	s1 := &goldilocks.Scalar{}
+	deriveSecretScalar(s1, h1[:paramB])
+	prefix1 := h1[paramB:]
+
+	s := &goldilocks.Scalar{}
+	s.Add(s0, s1)
+
+	pk0 := privateKey0[SeedSize:]
+	pk1 := privateKey1[SeedSize:]
+
+	publicKey := CombinePubKeys((*PublicKey)(&pk0), (*PublicKey)(&pk1))
+
+	// 2.  Compute SHAKE256(dom4(F, C) || prefix || PH(M), 114).
+	var rPM [hashSize]byte
+	H.Reset()
+
+	writeDom(&H, ctx, preHash)
+
+	_, _ = H.Write(prefix0)
+	_, _ = H.Write(prefix1)
+	_, _ = H.Write(PHM)
+	_, _ = H.Read(rPM[:])
+
+	// 3.  Compute the point [r]B.
+	r := &goldilocks.Scalar{}
+	r.FromBytes(rPM[:])
+	R := (&[paramB]byte{})[:]
+	if err := (goldilocks.Curve{}.ScalarBaseMult(r).ToBytes(R)); err != nil {
+		panic(err)
+	}
+	// 4.  Compute SHAKE256(dom4(F, C) || R || A || PH(M), 114)
+	var hRAM [hashSize]byte
+	H.Reset()
+
+	writeDom(&H, ctx, preHash)
+
+	_, _ = H.Write(R)
+	_, _ = H.Write(publicKey)
+	_, _ = H.Write(PHM)
+	_, _ = H.Read(hRAM[:])
+
+	// 5.  Compute S = (r + k * s) mod order.
+	k := &goldilocks.Scalar{}
+	k.FromBytes(hRAM[:])
+	S := &goldilocks.Scalar{}
+	S.Mul(k, s)
+	S.Add(S, r)
+
+	// 6.  The signature is the concatenation of R and S.
+	copy(signature[:paramB], R[:])
+	copy(signature[paramB:], S[:])
+}
+
 // Sign signs the message with privateKey and returns a signature.
 // This function supports the signature variant defined in RFC-8032: Ed448,
 // also known as the pure version of EdDSA.
@@ -288,6 +407,27 @@ func Sign(priv PrivateKey, message []byte, ctx string) []byte {
 func SignPh(priv PrivateKey, message []byte, ctx string) []byte {
 	signature := make([]byte, SignatureSize)
 	signAll(signature, priv, message, []byte(ctx), true)
+	return signature
+}
+
+// Sign signs the message with privateKey and returns a signature.
+// This function supports the signature variant defined in RFC-8032: Ed448,
+// also known as the pure version of EdDSA.
+// It will panic if len(privateKey) is not PrivateKeySize.
+func SignDualkey(priv0, priv1 PrivateKey, message []byte, ctx string) []byte {
+	signature := make([]byte, SignatureSize)
+	signAllDualkey(signature, priv0, priv1, message, []byte(ctx), false)
+	return signature
+}
+
+// SignPh creates a signature of a message given a keypair.
+// This function supports the signature variant defined in RFC-8032: Ed448ph,
+// meaning it internally hashes the message using SHAKE-256.
+// Context could be passed to this function, which length should be no more than
+// 255. It can be empty.
+func SignPhDualkey(priv0, priv1 PrivateKey, message []byte, ctx string) []byte {
+	signature := make([]byte, SignatureSize)
+	signAllDualkey(signature, priv0, priv1, message, []byte(ctx), true)
 	return signature
 }
 

@@ -21,6 +21,23 @@ func (zeroReader) Read(buf []byte) (int, error) {
 	return len(buf), nil
 }
 
+func TestAddition(t *testing.T) {
+	pub0, priv0, _ := ed448.GenerateKey(rand.Reader)
+	pub1, priv1, _ := ed448.GenerateKey(rand.Reader)
+	msg := []byte("hellp")
+	fmt.Printf("%x\n", pub0)
+	fmt.Printf("%x\n", pub1)
+
+	pub := ed448.CombinePubKeys(&pub0, &pub1)
+	fmt.Printf("%x\n\n\n", pub)
+
+	sgn := ed448.SignDualkey(priv0, priv1, msg, "")
+	fmt.Printf("%x\n", sgn)
+	ok := ed448.Verify(pub, msg, sgn, "")
+	fmt.Println(ok)
+
+}
+
 func TestEqual(t *testing.T) {
 	public, private, _ := ed448.GenerateKey(rand.Reader)
 

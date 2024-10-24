@@ -14,6 +14,7 @@
 //
 //	FrodoKEM-640-SHAKE
 //	Kyber512, Kyber768, Kyber1024
+//	McEliece
 package schemes
 
 import (
@@ -26,6 +27,16 @@ import (
 	"github.com/JI-0/circl-ed448/kem/kyber/kyber1024"
 	"github.com/JI-0/circl-ed448/kem/kyber/kyber512"
 	"github.com/JI-0/circl-ed448/kem/kyber/kyber768"
+	"github.com/JI-0/circl-ed448/kem/mceliece/mceliece348864"
+	"github.com/JI-0/circl-ed448/kem/mceliece/mceliece348864f"
+	"github.com/JI-0/circl-ed448/kem/mceliece/mceliece460896"
+	"github.com/JI-0/circl-ed448/kem/mceliece/mceliece460896f"
+	"github.com/JI-0/circl-ed448/kem/mceliece/mceliece6688128"
+	"github.com/JI-0/circl-ed448/kem/mceliece/mceliece6688128f"
+	"github.com/JI-0/circl-ed448/kem/mceliece/mceliece6960119"
+	"github.com/JI-0/circl-ed448/kem/mceliece/mceliece6960119f"
+	"github.com/JI-0/circl-ed448/kem/mceliece/mceliece8192128"
+	"github.com/JI-0/circl-ed448/kem/mceliece/mceliece8192128f"
 )
 
 var allSchemes = [...]kem.Scheme{
@@ -38,6 +49,16 @@ var allSchemes = [...]kem.Scheme{
 	kyber512.Scheme(),
 	kyber768.Scheme(),
 	kyber1024.Scheme(),
+	mceliece348864.Scheme(),
+	mceliece348864f.Scheme(),
+	mceliece460896.Scheme(),
+	mceliece460896f.Scheme(),
+	mceliece6688128.Scheme(),
+	mceliece6688128f.Scheme(),
+	mceliece6960119.Scheme(),
+	mceliece6960119f.Scheme(),
+	mceliece8192128.Scheme(),
+	mceliece8192128f.Scheme(),
 	hybrid.Kyber512X25519(),
 	hybrid.Kyber768X25519(),
 	hybrid.Kyber768X448(),
